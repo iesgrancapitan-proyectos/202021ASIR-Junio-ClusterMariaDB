@@ -1,6 +1,6 @@
 ## 1. Definición de proyecto
 
-Es proyecto integrado tiene como objetivo el montaje de un clúster de MariaDB con el complemento galera, el cual está montado en contenedores Docker gestionados por Kubernetes. Todas las conexiones entre los nodos serán seguras gracias a la implementación de mecanismo de cifrado, así como se estudiarán las diferentes formas de cifrar los datos contenidos en la base de datos, y se decidirá si se implementa o no en función de los recursos necesarios y el valor de los datos almacenados.
+Este proyecto integrado tiene como objetivo el montaje de un clúster de MariaDB con el complemento galera, el cual está montado en contenedores Docker gestionados por Kubernetes. Todas las conexiones entre los nodos serán seguras gracias a la implementación de mecanismo de cifrado, así como se estudiarán las diferentes formas de cifrar los datos contenidos en la base de datos, y se decidirá si se implementa o no en función de los recursos necesarios y el valor de los datos almacenados.
 
 Kubernetes nos permite añadir un mecanismo de alta disponibilidad, ya que este se encarga de forma automática de levantar y mantener tantos nodos como sea necesario, permitiendo una rápida escalabilidad del sistema en caso necesario, si en un momento dado se necesita un mayor número de nodos del clúster de MariaDB, Kubernetes será el encargado de implementarlos de forma automática, así como de reponer un nodo en caso de que este deje de funcionar.
 
