@@ -28,11 +28,13 @@ Por último se cifrafrá el contenido de la base de datos utilizando el plugin f
 Una vez el sistema esté completamente desplegado, accedemos desde el navegador a la dirección  http://192.168.12.146:32049/wp-admin para gestionar el contenido de nuestro navegador. Para gestionar la base de datos tenemos varios métodos de acceso:
 ### 1. Acceso mediante un contenedor temporal 
 Levantamos un contenedor temporal en la en kubernetes que lanza un cliente de MaríaDB que se conecta directamente con el servidor ejecutando: 
+
  $ kubectl run my-release-mariadb-galera-client --rm --tty -i --restart='Never' --namespace default --image docker.io/bitnami/mariadb-galera:10.5.9- 
   debian-10-r52 --command -- mysql -h my-release-mariadb-galera -P 3306 -uroot -p$(kubectl get secret --namespace default my-release-mariadb-galera -o 
   jsonpath="{.data.mariadb-root-password}" | base64 --decode) my_database
 ### 2. Acceso mediante una terminal de bash
 Podemos acceder a cualquier contenedor abriendo una terminal de bash, para ello ejecutamos: 
+
  $ kubectl exec --stdin --tty my-mariadb-galera-0 -- /bin/bash
 Donde my-mariadb-galera-0 es el nombre del conetenedor al que queremos acceder. Una vez dentro del contenedor nos conectamos a la base de datos de forma local como en cualquier otra terminal de bash ejecutando el comando mysql y los parámetros -u para el usuario y -p para la contraseña.
 ### 3. Acceso remoto
