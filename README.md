@@ -25,7 +25,7 @@ El comando helm no solo nos permite desplegar contenedores, sino también actual
 Por último se cifrafrá el contenido de la base de datos utilizando el plugin file_key_managment de MariaDB, para ello tenemos que volver a actualizar la configuración de los contenedores desplegados incluyendo un fichero de configuración adicional a MariaDB, para personalizar por completo el despliegue de los contenedores. Este fichero se incluye en un archivo con extensión .yaml donde añadimos las líneas correspondiente al plugin en el apartado MariaDB. Al realizar el update pasamos como parámetro este fichero .yaml al ejecutar nuevamente el helm update. Podemos verlo en detalle en el entregable e-kmdb-06 de la wiki
 
 ## 3. Uso
-Una vez el sistema esté completamente desplegado, accedemos desde el navegador a la dirección  http://192.168.12.146:32049/wp-admin para gestionar el contenido de nuestro navegador. Para gestionar la base de datos tenemos varios métodos de acceso:
+Una vez el sistema esté completamente desplegado, accedemos desde el navegador a la dirección http://ip_servidor:puerto/wp-admin, que en mi caso particular es: http://192.168.12.146:32049/wp-admin para gestionar el contenido de nuestro navegador. Para gestionar la base de datos tenemos varios métodos de acceso:
 ### 1. Acceso mediante un contenedor temporal 
 Levantamos un contenedor temporal en la en kubernetes que lanza un cliente de MaríaDB que se conecta directamente con el servidor ejecutando: 
 
